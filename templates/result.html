@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Tweet Sentiment Detector</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='../static/app.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+		<div class="container">
+			<h2 class='container-heading'><span>Spam Detector</span> for Email</h2>
+	        	<div class='description'>
+				<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+			</div>
+		</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='Danger'>Spam.</span></h1>
+				<!-- <img class="gif" src="{{ url_for('static', filename='Disaster.webp') }}" alt="Disaster Image"> -->
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='Safe'>Not Spam</span></h1>
+				<!-- <img class="gif" src="{{ url_for('static', filename='not-disaster.webp') }}" alt="Not a disaster image"> -->
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+        <div class='footer'>
+            <p class='footer-description'>Author ❤️ Sanjeev Kumar</p>
+        </div>
+
+	</body>
+</html>
